@@ -10,20 +10,30 @@ function App() {
       setLocation(true)
     })
   }, [])
+
+  if(location == false){
+    return (
+      <Fragment>
+        Você precisa habilitar a localização para o aplicativa funcionar.
+      </Fragment>
+    )
+  }  else{
+    return (
+      <Fragment>
+        <h3>Clima nas suas Coordenadas (Exemplo)</h3>
+        <hr/>
+        <ul>
+          <li>Temperatura atual: xº</li>
+          <li>Temperatura máxima: xº</li>
+          <li>Temperatura minima: xº</li>
+          <li>Pressão: x hpa</li>
+          <li>Umidade: x%</li>
+        </ul>
+      </Fragment>
+    );
+  }
   
-  return (
-    <Fragment>
-      <h3>Clima nas suas Coordenadas (Exemplo)</h3>
-      <hr/>
-      <ul>
-        <li>Temperatura atual: xº</li>
-        <li>Temperatura máxima: xº</li>
-        <li>Temperatura minima: xº</li>
-        <li>Pressão: x hpa</li>
-        <li>Umidade: x%</li>
-      </ul>
-    </Fragment>
-  );
+  
 }
 
 export default App;
